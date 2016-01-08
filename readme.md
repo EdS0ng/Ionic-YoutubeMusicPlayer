@@ -11,16 +11,36 @@ Ionic framework
 Node
 Bower
 Npm
+FFMPEG
 
 # h2 Installation
 
 The following below is assuming you already have Node and npm installed.
 
--Follow the Ionic setup instructions on their website at http://ionicframework.com/getting-started/
+- Follow the Ionic setup instructions on their website at http://ionicframework.com/docs/guide/installation.html
 
--You need to install the Android dependencies if you don't have it already.
+- You need to install the Android dependencies if you don't have it already.
 
--Go into the Server folder and run 'npm i' in the command line.
+- The www folder can be dropped into the new ionic project directory to completely replace the existing www folder.
+
+- You will need to install some cordova plugins. 
+  - Cordova InAppBrowser
+  - Cordova Toast
+  
+
+- Go into the Server folder and run `npm i` in the command line.
+
+- To install ffmpeg, go to https://www.ffmpeg.org/download.html and download and install it for your OS.
+
+- The server is independent from the www folder and must be deployed before you can use the app.
+
+- For Heroku deployment, simply follow the normal heroku deployment, the Procfile will take care of installing ffmpeg.
+
+- After deployment, you will have to put the domain into www/app/socket/socket.js and www/app/player/playerCtrl.js 
+
+- In addition, there is a file called Setkey.js in www/js where you will need to put in your Google Youtube API key for web app. You will need a google account to get this.
+
+- Simply, plug your Android device into your computer and run `ionic run android` in your root Ionic project directory to install and start the app. 
 
 
 
