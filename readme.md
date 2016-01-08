@@ -1,6 +1,6 @@
 *This is a Work in Progress*
 
-# h1 Motivation
+# Motivation
 This app is for live streaming music from Youtube onto a mobile hybrid app, in order to play music in the background without buying the Youtube Red service. 
 
 # Setup
