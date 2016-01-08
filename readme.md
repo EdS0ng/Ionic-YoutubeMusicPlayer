@@ -3,9 +3,9 @@
 # h1 Motivation
 This app is for live streaming music from Youtube onto a mobile hybrid app, in order to play music in the background without buying the Youtube Red service. 
 
-#h1 Setup
+# Setup
 ___
-#h2 Prerequisites
+## Prerequisites
 
 Ionic framework
 Node
@@ -13,7 +13,7 @@ Bower
 Npm
 FFMPEG
 
-#h2 Installation
+## Installation
 
 The following below is assuming you already have Node and npm installed.
 
@@ -43,13 +43,13 @@ The following below is assuming you already have Node and npm installed.
 - Simply, plug your Android device into your computer and run `ionic run android` in your root Ionic project directory to install and start the app. 
 
 
-#h1 Possible Features in the Future
+# Possible Features in the Future
 ___
 - Better UI for the player
 
 - Create new playlists
 
-#h1 Issues/Bugs
+# Issues/Bugs
 
 Please let me know if there are any bugs or features you would like to see. I will try my best to fix them as time allows.
 Thanks!
