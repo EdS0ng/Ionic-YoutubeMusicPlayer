@@ -1,0 +1,22 @@
+
+<ion-view title="Home">
+  <ion-content overflow-scroll="true">
+    <div class="card">
+      <div class="item item-divider">
+        <h2>Trending Videos</h2>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="video in videos track by $index" ng-click="play(video)">
+      <div class="item item-divider">
+        <h2>{{video.snippet.title}}</h2>
+        <h6>By: {{video.snippet.channelTitle}}</h6>
+      </div>
+      <div class="item item-body item-text-wrap">
+        <img class="full-image" ng-src="{{video.snippet.thumbnails.medium.url}}">
+        <p id="description">{{video.snippet.description}}</p>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="5%" immediate-check="false">
+    </ion-infinite-scroll>
+  <ion-content>
+</ion-view>

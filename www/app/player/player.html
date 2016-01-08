@@ -1,0 +1,72 @@
+
+<ion-view title="Player">
+  <ion-content overflow-scroll="true">
+    <div ng-if="playlist" class="list card">
+      <div class="row playlistHeader">
+        <div class="col">
+          <h3 class="playlistHeaderText">Playlist</h3>
+        </div>
+        <div class="col col-25">
+          <span class="row">
+            <a class="previous button button-clear ion-skip-backward" ng-click="previous()" ng-disabled="{{disablePrevious}}"></a>
+            <a class="next button button-clear ion-skip-forward" ng-click="next()" ng-disabled="{{disableNext}}"></a>
+          </span>
+        </div>
+      </div>
+      <div class="playlistArea" >
+        <div class="item item-avatar" ng-repeat="(idx,item) in playlistArray" ng-click="playPlaylistVideo(idx)">
+          <img ng-src="{{item.snippet.thumbnails.default.url}}">
+          <h3>{{item.snippet.title}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="list card" id="playerArea">
+      <div class="item item-divider">
+        <h2>{{song.snippet.title}}</h2>
+        <h6>By: {{song.snippet.channelTitle}}</h6>
+      </div>
+      <div class="item item-image">
+        <img ng-src="{{song.snippet.thumbnails.medium.url}}">
+      </div>
+      <audio id="audioPlayer" autoplay="true" media-event controls>
+        <source id="source" ng-src='{{vidId}}' type="audio/mpeg">
+      </audio>
+      <div class="row">
+        <div class="col">
+          <ul id="addToPlaylist">
+            <li class="button button-stable button-small" ng-click="togglePlaylists()">Add to Playlist
+              <ul ng-show="playlistState">
+                <li ng-click="addToPlaylist(watchLater)" ng-if="watchLater">WatchLater</li>
+                <li ng-if="!watchLater">Login Required</li>
+                <li ng-repeat="(idx, userPlaylist) in userPlaylists" ng-click="addToPlaylist(userPlaylist.id)">{{::userPlaylist.snippet.title}}</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col col-25">
+          <a class="button button-clear like" href="#" ng-click="rate('like')">
+            <i class="icon ion-thumbsup"></i>
+          </a>
+          <a class="button button-clear dislike" href="#" ng-click="rate('dislike')">
+            <i class="icon ion-thumbsdown"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="card"><div class="item item-divider"><h1>Related Videos</h1></div></div>
+      <div class="list card" ng-repeat="video in videos track by $index" ng-click="play(video)">
+      <div class="item item-divider">
+        <h2>{{video.snippet.title}}</h2>
+        <h6>By: {{video.snippet.channelTitle}}</h6>
+      </div>
+      <div class="item item-body item-text-wrap">
+        <img class="full-image" ng-src="{{video.snippet.thumbnails.medium.url}}">
+        <p id="description">{{video.snippet.description}}</p>
+      </div>
+    </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="5%" immediate-check="false">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,70 @@
+.logo{
+  width: 73px;
+  height: 40px;
+  vertical-align: middle;
+}
+audio{
+  width: 100%;
+}
+.previous{
+  font-size: 5vw;
+  display: inline-block;
+  margin-left: 1vw;
+}
+.next{
+  font-size: 5vw;
+  display: inline-block;
+  margin-left: 1vw;
+}
+#description{
+  line-height: 1.2em;
+  max-height: 3.6em;
+  overflow: hidden;
+}
+.playlistArea{
+  max-height: 18vw;
+  overflow:scroll;
+}
+.item-avatar{
+  background-color: #2d2d2d;
+}
+.item-avatar > h3{
+  color: white;
+}
+.playlistHeader{
+  background-color: #101010;
+}
+.playlistHeaderText{
+  color:white;
+}
+ion-content{
+  background-color: #6d6d6d;
+}
+.playlistArea-lg{
+  max-height: 36vw;
+  overflow:scroll;
+}
+.like, .dislike{
+  margin-left: 1vw;
+}
+#playAll{
+  display: block;
+}
+#addToPlaylist ul{
+  position:absolute;
+  top:100%;
+  left:0;
+  background:#fff;
+  padding:0;
+  width: 100%;
+  z-index: 50;
+}
+#addToPlaylist ul li{
+  width: 100%;
+  background-color: #333;
+  border: #b2b2b2 solid 1px;
+  color: white;
+}
+#playerArea{
+  overflow: visible;
+}

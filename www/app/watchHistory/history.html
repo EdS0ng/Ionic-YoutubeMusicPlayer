@@ -1,0 +1,15 @@
+<ion-view title="Watch History">
+  <ion-content overflow-scroll="true">
+    <div class="list card">
+      <div class="item item-divider">
+        <h2>Watch History</h2>
+      </div>
+      <div class="item item-avatar" ng-repeat="video in history track by $index" ng-click="play(history, $index)">
+        <img ng-src="{{video.snippet.thumbnails.default.url}}">
+        <h3>{{video.snippet.title}}</h3>
+      </div>
+    </div>
+    <ion-infinite-scroll on-infinite="loadMore()" distance="5%">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>

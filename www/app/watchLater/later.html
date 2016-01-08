@@ -1,0 +1,21 @@
+<ion-view title="Watch Later">
+  <ion-content>
+    <div class="list card">
+      <div class="item row">
+        <div class="col col-33">
+          <img ng-src="{{videos[0].snippet.thumbnails.default.url}}">
+        </div>
+        <div class="col">
+          <h1>Watch Later</h1>
+          <span>By: {{videos[0].snippet.channelTitle}}</span>
+          <span>--{{videos.length}} videos</span>
+          <button id="playAll" class="button button-stable" ng-click="play(videos, 0)">Play All</button>
+        </div>
+      </div>
+      <div class="item item-avatar" ng-repeat="video in videos track by $index" ng-click="play(videos, $index)">
+        <img ng-src="{{video.snippet.thumbnails.default.url}}">
+        <h3>{{video.snippet.title}}</h3>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,23 @@
+<ion-view title="Playlists">
+  <ion-content overflow-scroll="true">
+    <div class="list card" ng-repeat="(parentKey, playlist) in playlists" ng-click="showVideos(playlist)">
+      <div class="item row">
+        <div class="col col-33">
+          <img class="col" ng-src="{{playlist.snippet.thumbnails.high.url}}">
+        </div>
+        <div class="col">
+          <h1>{{playlist.snippet.title}}</h1>
+          <span>By: {{playlist.snippet.channelTitle}}</span>
+          <span>--{{playlist.contentDetails.itemCount}} videos</span>
+          <button id="playAll" class="button button-stable" ng-click="play(playlist.videos, 0, $event)" ng-disabled="playlist.videos===undefined">Play All</button>
+        </div>
+      </div>
+      <div class="playlistArea-lg">
+        <div class="item item-avatar" ng-repeat="(childKey, video) in playlist.videos" ng-hide="playlist.collapse" ng-click="play(playlist.videos, childKey)">
+          <img ng-src="{{video.snippet.thumbnails.default.url}}">
+          <h3>{{video.snippet.title}}</h3>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
