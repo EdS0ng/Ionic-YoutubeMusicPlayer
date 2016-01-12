@@ -5,9 +5,9 @@ angular.module('youtube').service('loginSvc', loginSvc);
 loginSvc.$inject = ['$http'];
 
 function loginSvc ($http){
-  var clientId = '342506801790-asvb9vk6f786er21j0sg8ogb3sn7vea7.apps.googleusercontent.com';
+  var clientId = 'YOUR_CLIENT_ID';
   var scopes = 'https://www.googleapis.com/auth/youtube'; 
-  var clientSecret = '_mouIaV3jrklKDlkhu_fF6Un';
+  var clientSecret = 'YOUR_CLIENT_SECRET';
 
   $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
   var refreshToken;

@@ -7,11 +7,11 @@ This app is for live streaming music from Youtube onto a mobile hybrid app, in o
 ___
 ## Prerequisites
 
-Ionic framework
-Node
-Bower
-Npm
-FFMPEG
+- Ionic framework
+- Node
+- Bower
+- Npm
+- FFMPEG
 
 ## Installation
 
@@ -38,7 +38,10 @@ The following below is assuming you already have Node and npm installed.
 
 - After deployment, you will have to put the domain into www/app/socket/socket.js and www/app/player/playerCtrl.js 
 
-- In addition, there is a file called Setkey.js in www/js where you will need to put in your Google Youtube API key for web app. You will need a google account to get this.
+- In addition, there is a file called Setkey.js in www/js where you will need to put in your Google Youtube API key for web app. You will need a google account to get this. In addition, you will have to add you client key and secret to www/app/sidemenuCtrl/loginSvc.
+
+- In the config.xml file in the root Ionic folder, make sure you have `<preference name="SplashScreenDelay" value="10000"/>
+  <preference name="AutoHideSplashScreen" value="false"/>`
 
 - Simply, plug your Android device into your computer and run `ionic run android` in your root Ionic project directory to install and start the app. 
 
@@ -48,6 +51,8 @@ ___
 - Better UI for the player
 
 - Create new playlists
+
+- Recent Searches
 
 # Issues/Bugs
 
