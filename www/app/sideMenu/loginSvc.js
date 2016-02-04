@@ -5,15 +5,15 @@ angular.module('youtube').service('loginSvc', loginSvc);
 loginSvc.$inject = ['$http'];
 
 function loginSvc ($http){
-  var clientId = 'YOUR_CLIENT_ID';
+  var clientId = 'Your Client Id Here;
   var scopes = 'https://www.googleapis.com/auth/youtube'; 
-  var clientSecret = 'YOUR_CLIENT_SECRET';
+  var clientSecret = 'Your Client Secret Here';
 
   $http.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
   var refreshToken;
 
   this.oAuthLogin = function (cb){
-    //for browser testing
+    //FOR BROWSER TESTING
     // gapi.auth.authorize({
     //   client_id: clientId, 
     //   scope: scopes, 

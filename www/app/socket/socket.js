@@ -1,26 +1,24 @@
 'use strict';
 
-angular.module('youtube').factory('socketObj', ['$rootScope', function ($rootScope) {
+angular.module('youtube').factory('socketObj', ['$rootScope', '$http', function ($rootScope, $http) {
+  var endpoint = 'Your Server Endpoint';
   var socketObj = {
-    socket: io.connect('YOUR_SERVER_DOMAIN'),
+    socket: io.connect(endpoint),
     events:[]
   };
 
   (function (){
-    socketObj.socket.on('created', function (){
-      console.log('created');
+    socketObj.socket.on('ping', function (){
+      $http.get(endpoint+'/ping').then(function (){
+      }, function (err){
+        console.log(err);
+      })
     })
   })();
 
   (function(){
     socketObj.socket.on('end', function (){
       console.log('download finished on server');
-    })
-  })(); 
-
-  (function(){
-    socketObj.socket.on('start', function (){
-      console.log('data');
     })
   })(); 
 

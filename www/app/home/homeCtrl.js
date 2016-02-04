@@ -2,9 +2,9 @@
 
 angular.module('youtube').controller('homeCtrl', homeCtrl);
 
-homeCtrl.$inject = ['$scope', '$state', 'storeSvc', 'homeSvc', '$cordovaSplashscreen'];
+homeCtrl.$inject = ['$scope', '$state', 'storeSvc', 'homeSvc', '$cordovaSplashscreen','socketObj'];
 
-function homeCtrl ($scope, $state, storeSvc, homeSvc, $cordovaSplashscreen){
+function homeCtrl ($scope, $state, storeSvc, homeSvc, $cordovaSplashscreen, socketObj){
   homeSvc.getPopularVideos(function (resp){
     $scope.videos = resp.items;
     

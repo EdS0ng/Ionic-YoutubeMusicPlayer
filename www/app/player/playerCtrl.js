@@ -2,9 +2,9 @@
 
 angular.module('youtube').controller('playerCtrl', playerCtrl);
 
-playerCtrl.$inject = ['$scope', 'playerSvc', '$stateParams', 'storeSvc', '$sce', '$state', 'socketObj','$ionicLoading','timerSvc','playlistSvc'];
+playerCtrl.$inject = ['$scope', 'playerSvc', '$stateParams', 'storeSvc', '$sce', '$state', '$ionicLoading','timerSvc','playlistSvc'];
 
-function playerCtrl ($scope, playerSvc, $stateParams, storeSvc, $sce, $state, socketObj, $ionicLoading, timerSvc, playlistSvc){
+function playerCtrl ($scope, playerSvc, $stateParams, storeSvc, $sce, $state, $ionicLoading, timerSvc, playlistSvc){
   
   $ionicLoading.show({
     template:'<ion-spinner></ion-spinner>'
@@ -57,7 +57,7 @@ function playerCtrl ($scope, playerSvc, $stateParams, storeSvc, $sce, $state, so
 
   $scope.watchLater = storeSvc.returnPlaylists('watchLater');
   $scope.playlistState = false;
-  $scope.vidId = $sce.trustAsResourceUrl('Your_Server_Domain/music/'+link);
+  $scope.vidId = $sce.trustAsResourceUrl('Your Server Endpoint/music/'+link);
 
   playerSvc.getDuration(link);
   playerSvc.getRelatedVideos(link, function (resp){

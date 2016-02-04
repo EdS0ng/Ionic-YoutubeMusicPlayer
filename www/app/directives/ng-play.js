@@ -5,8 +5,7 @@ angular.module('youtube').directive('mediaEvent', ['$parse','$state', '$statePar
     restrict: 'A',
     compile:function($element, attrs) {
               return function ngEventHandler(scope, element) {
-                element.on('canplay', function(event) {
-                  var next = Number($stateParams.id)+1;                
+                element.on('canplay', function(event) {              
                   $ionicLoading.hide();
                 });
                 element.on('playing', function (){                

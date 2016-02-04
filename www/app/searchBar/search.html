@@ -11,6 +11,6 @@
   </div>
   <ion-list>
     <ion-item>Recent Searches</ion-item>
-    <ion-item ng-repeat="(idx, query) in searches" ng-click="search(query)">{{query}}</ion-item>
+    <ion-item ng-repeat="query in searches track by $index" ng-click="search(query)">{{query}}</ion-item>
   </ion-list>
 </ion-view>

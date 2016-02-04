@@ -7,6 +7,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 var bodyParser = require('body-parser');
+var cors = require('cors');
 var emitter = require('./util/eventEmitter');
 
 //CORS for browers testing
@@ -22,6 +23,7 @@ app.use(bodyParser.json());
 
 //Routes
 app.use('/music', require('./routes/music'));
+app.use('/ping', require('./routes/pinger'));
 
 //Socket
 // io.set('origins', 'http://localhost:8100');
@@ -31,7 +33,7 @@ io.on('connection', function (socket){
     console.log('pause');
   })
 
-  socket.emit('created');
+  socket.emit('ping');
   
   emitter.listener('start', function (){
     socket.emit('start');
@@ -41,6 +43,13 @@ io.on('connection', function (socket){
     socket.emit('end');
   })
 
+  var interval = setInterval(function (){
+    socket.emit('ping')
+  }, 900000);
+
+  socket.on('disconnect', function (){
+    clearInterval(interval);
+  });
 })
 
 

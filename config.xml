@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<widget id="com.ionicframework.youtube266250" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>youtube</name>
+  <description>
+        An Ionic Framework and Cordova project.
+    </description>
+  <author email="hi@ionicframework" href="http://ionicframework.com/">
+      Ionic Framework Team
+    </author>
+  <content src="index.html"/>
+  <access origin="*"/>
+  <preference name="webviewbounce" value="false"/>
+  <preference name="UIWebViewBounce" value="false"/>
+  <preference name="DisallowOverscroll" value="true"/>
+  <preference name="android-minSdkVersion" value="16"/>
+  <preference name="BackupWebStorage" value="none"/>
+  <preference name="SplashScreen" value="screen"/>
+  <preference name="SplashScreenDelay" value="10000"/>
+  <preference name="AutoHideSplashScreen" value="false"/>
+  <feature name="StatusBar">
+    <param name="ios-package" value="CDVStatusBar" onload="true"/>
+  </feature>
+  <platform name="android">
+    <icon src="resources/android/icon/YoutubeIcon36x36.png" density="ldpi"/>
+    <icon src="resources/android/icon/YoutubeIcon48x48.png" density="mdpi"/>
+    <icon src="resources/android/icon/YoutubeIcon72x72.png" density="hdpi"/>
+    <icon src="resources/android/icon/YoutubeIcon96x96.png" density="xhdpi"/>
+    <icon src="resources/android/icon/YoutubeIcon144x144.png" density="xxhdpi"/>
+    <icon src="resources/android/icon/YoutubeIcon192x192.png" density="xxxhdpi"/>
+    <splash src="resources/android/splash/youtubeSplash320x200.png" density="land-ldpi"/>
+    <splash src="resources/android/splash/youtubeSplash480x320.png" density="land-mdpi"/>
+    <splash src="resources/android/splash/youtubeSplash800x480.png" density="land-hdpi"/>
+    <splash src="resources/android/splash/youtubeSplash1280x720.png" density="land-xhdpi"/>
+    <splash src="resources/android/splash/youtubeSplash1600x960.png" density="land-xxhdpi"/>
+    <splash src="resources/android/splash/youtubeSplash1980x1280.png" density="land-xxxhdpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait200x320.png" density="port-ldpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait320x480.png" density="port-mdpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait480x800.png" density="port-hdpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait720x1280.png" density="port-xhdpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait1034x1600.png" density="port-xxhdpi"/>
+    <splash src="resources/android/splash/YoutubeSplashPortrait1280x1980.png" density="port-xxxhdpi"/>
+  </platform>
+</widget>

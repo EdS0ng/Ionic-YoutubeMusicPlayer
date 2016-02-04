@@ -1,0 +1,34 @@
+'use strict';
+
+let express = require('express');
+let router = express.Router();
+<<<<<<< HEAD
+
+=======
+let ytdl = require('ytdl-core');
+let ffmpeg = require('fluent-ffmpeg');
+>>>>>>> 63d1b3f6a779ea9fb5effa27723011b8e842bbe8
+let path = require('path');
+
+
+router.get('/', function (req, res){
+  res.sendFile(path.join(__dirname, '../views/index.html'));
+});
+
+module.exports = router;
+
+
+<<<<<<< HEAD
+  
+=======
+  // ytdl.getInfo(videoUrl, function(err,data){
+  //   console.log('got info');
+  //   var info = JSON.stringify(data);
+  //   fs.writeFile('./info', info, function (){
+  //    console.log('done');
+  //   });
+
+// }
+
+>>>>>>> 63d1b3f6a779ea9fb5effa27723011b8e842bbe8
+

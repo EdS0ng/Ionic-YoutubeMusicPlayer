@@ -21,7 +21,7 @@ The following below is assuming you already have Node and npm installed.
 
 - You need to install the Android dependencies if you don't have it already.
 
-- The www folder can be dropped into the new ionic project directory to completely replace the existing www folder.
+- The config.xml, www, and resources folders can be dropped into the new ionic project directory to completely replace the existing folders.
 
 - You will need to install some cordova plugins. 
   - Cordova InAppBrowser
@@ -40,9 +40,6 @@ The following below is assuming you already have Node and npm installed.
 
 - In addition, there is a file called Setkey.js in www/js where you will need to put in your Google Youtube API key for web app. You will need a google account to get this. In addition, you will have to add you client key and secret to www/app/sidemenuCtrl/loginSvc.
 
-- In the config.xml file in the root Ionic folder, make sure you have `<preference name="SplashScreenDelay" value="10000"/>
-  <preference name="AutoHideSplashScreen" value="false"/>`
-
 - Simply, plug your Android device into your computer and run `ionic run android` in your root Ionic project directory to install and start the app. 
 
 
@@ -51,8 +48,6 @@ ___
 - Better UI for the player
 
 - Create new playlists
-
-- Recent Searches
 
 # Issues/Bugs
 
