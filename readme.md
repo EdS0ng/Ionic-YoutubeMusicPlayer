@@ -2,6 +2,7 @@
 
 # Motivation
 This app is for live streaming music from Youtube onto a mobile hybrid app, in order to play music in the background without buying the Youtube Red service. 
+You can try it by installing the sample apk. Keep in mind that you will be sharing the server and API quota limits with whoever else installs the apk and thus may experience performance hits.
 
 # Setup
 ___
@@ -13,7 +14,7 @@ ___
 - Npm
 - FFMPEG
 
-## Installation
+## Installation 
 
 The following below is assuming you already have Node and npm installed.
 
@@ -34,7 +35,7 @@ The following below is assuming you already have Node and npm installed.
 
 - The server is independent from the www folder and must be deployed before you can use the app.
 
-- For Heroku deployment, simply follow the normal heroku deployment, the Procfile will take care of installing ffmpeg.
+- For Heroku deployment, follow the normal heroku deployment procedure, with the exception that before pushing to heroku master, run `heroku buildpacks:add https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git`.
 
 - After deployment, you will have to put the domain into www/app/socket/socket.js and www/app/player/playerCtrl.js 
 
